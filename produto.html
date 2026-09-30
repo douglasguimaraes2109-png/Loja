@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Produto — SUA MARCA</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <a href="index.html" class="logo">SUA <em>marca</em></a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="catalogo.html">Loja</a>
+      <a href="index.html#sobre">Sobre</a>
+      <a href="index.html#contato">Contato</a>
+      <a href="carrinho.html" class="carrinho-btn">🛒 <span class="badge">0</span></a>
+    </nav>
+  </header>
+
+  <!-- ÁREA DO PRODUTO (preenchida pelo JS) -->
+  <div class="produto-wrap" id="produtoWrap">
+    <!-- conteúdo injetado via produto.js -->
+  </div>
+
+  <!-- PRODUTOS RELACIONADOS -->
+  <section class="secao" id="relacionados" style="display:none;">
+    <div class="secao-header">
+      <h2 class="secao-titulo">Você também <em>pode gostar</em></h2>
+      <p class="secao-sub">Outras estampas da coleção</p>
+    </div>
+    <div class="grid" id="listaRelacionados"></div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="contato">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">SUA <em>marca</em></div>
+        <p>Estampas autorais feitas com cuidado.<br>Produção em pequenos lotes desde 2026.</p>
+      </div>
+      <div>
+        <h4>LOJA</h4>
+        <a href="catalogo.html">Coleção</a>
+        <a href="catalogo.html">Novidades</a>
+        <a href="catalogo.html">Promoções</a>
+      </div>
+      <div>
+        <h4>AJUDA</h4>
+        <a href="#">Trocas</a>
+        <a href="#">Pagamento</a>
+        <a href="#">Rastreio</a>
+      </div>
+      <div>
+        <h4>CONTATO</h4>
+        <a href="#">@suamarca</a>
+        <a href="#">contato@suamarca.com</a>
+      </div>
+    </div>
+    <div class="copy">© 2026 Sua Marca — Todos os direitos reservados</div>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script src="js/produtos.js"></script>
+  <script src="js/produto.js"></script>
+  <script src="js/estetica.js"></script>
+</body>
+</html>
