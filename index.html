@@ -5,13 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SUA MARCA — Estampas Autorais</title>
   <link rel="stylesheet" href="css/style.css">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@300;400;500;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <!-- HEADER -->
   <header>
     <a href="index.html" class="logo">SUA <em>marca</em></a>
     <nav>
@@ -23,16 +19,34 @@
     </nav>
   </header>
 
-  <!-- HERO -->
   <section class="hero">
-    
+
+    <svg class="grafite grafite-1" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M20 180 Q 30 120, 60 100 T 100 80 Q 120 75, 140 95 T 180 60" stroke="currentColor" stroke-width="3" stroke-linecap="round" fill="none"/>
+      <path d="M30 170 Q 45 130, 70 115 T 105 95" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none" opacity=".6"/>
+      <circle cx="170" cy="50" r="6" stroke="currentColor" stroke-width="2" fill="none"/>
+    </svg>
+
+    <svg class="grafite grafite-2" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M20 40 L 160 40 M 130 20 L 160 40 L 130 60" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      <path d="M20 80 L 120 80" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity=".6"/>
+    </svg>
+
+    <svg class="grafite grafite-3" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M100 20 L 110 90 L 180 100 L 110 110 L 100 180 L 90 110 L 20 100 L 90 90 Z" stroke="currentColor" stroke-width="3" stroke-linejoin="round" fill="none"/>
+    </svg>
+
+    <svg class="grafite grafite-4" viewBox="0 0 300 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M10 80 Q 30 20, 50 60 T 90 60 Q 110 20, 130 70 T 170 50 Q 190 30, 210 60 T 250 40 L 280 70" stroke="currentColor" stroke-width="3" stroke-linecap="round" fill="none"/>
+      <circle cx="270" cy="30" r="4" fill="currentColor"/>
+    </svg>
 
     <h1>Estampas<br><em>autorais</em>, feitas pra durar.</h1>
     <p>Camisetas exclusivas, produzidas em pequenos lotes e pensadas pra quem valoriza o diferente.</p>
     <a href="catalogo.html" class="btn btn-primario">Ver Coleção</a>
+
   </section>
 
-  <!-- PRODUTOS EM DESTAQUE -->
   <section class="secao" id="destaques">
     <div class="secao-header">
       <h2 class="secao-titulo">Nossa <em>coleção</em></h2>
@@ -41,18 +55,16 @@
     <div class="grid" id="listaProdutos"></div>
   </section>
 
-  <!-- SOBRE -->
   <section class="sobre" id="sobre">
     <div>
       <h2>Feito à mão,<br>pensado <em>pra durar</em>.</h2>
       <p>Cada estampa é criada por nós, impressa em algodão de alta qualidade e pensada pra você usar por anos.</p>
       <p>Produzimos em pequenos lotes. Sem pressa, sem excesso, sem desperdício.</p>
-      <a href="catalogo.html" class="btn" style="margin-top:24px;background:#fff;color:#111;border-color:#fff;">Conhecer produtos</a>
+      <a href="catalogo.html" class="btn" style="margin-top:24px;background:#fff;color:#0A0A0A;border-color:#fff;">Conhecer produtos</a>
     </div>
     <div class="sobre-img">SM</div>
   </section>
 
-  <!-- COMO COMPRAR -->
   <section class="secao">
     <div class="secao-header">
       <h2 class="secao-titulo">Como <em>comprar</em></h2>
@@ -66,7 +78,6 @@
     </div>
   </section>
 
-  <!-- NEWSLETTER -->
   <section class="newsletter">
     <h3>Fique por <em>dentro</em></h3>
     <p>Novidades, lançamentos e promoções exclusivas no seu e-mail.</p>
@@ -76,7 +87,6 @@
     </form>
   </section>
 
-  <!-- FOOTER -->
   <footer id="contato">
     <div class="footer-grid">
       <div>
@@ -104,10 +114,8 @@
     <div class="copy">© 2026 Sua Marca — Todos os direitos reservados</div>
   </footer>
 
-  <!-- SCRIPTS -->
   <script src="js/produtos.js"></script>
   <script>
-    // Renderiza os 8 produtos na home
     const lista = document.getElementById('listaProdutos');
     PRODUTOS.forEach(p => {
       lista.innerHTML += `
@@ -125,6 +133,5 @@
       `;
     });
   </script>
-  <script src="js/estetica.js"></script>
 </body>
 </html>
