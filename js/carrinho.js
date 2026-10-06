@@ -2,20 +2,17 @@
    Carrinho — listar, alterar qtd, remover
    ============================================ */
 
-const FRETE_GRATIS = 199; // Valor mínimo pra frete grátis
+const FRETE_GRATIS = 199; 
 
-// Lê o carrinho do localStorage
 function lerCarrinho() {
   return JSON.parse(localStorage.getItem('carrinho') || '[]');
 }
 
-// Salva o carrinho
 function salvarCarrinho(carrinho) {
   localStorage.setItem('carrinho', JSON.stringify(carrinho));
   atualizarBadgeCarrinho();
 }
 
-// Altera quantidade (+1 ou -1)
 function alterarQtd(index, delta) {
   const carrinho = lerCarrinho();
   const item = carrinho[index];
@@ -23,7 +20,6 @@ function alterarQtd(index, delta) {
 
   item.qtd += delta;
 
-  // Se zerar, remove
   if (item.qtd <= 0) {
     carrinho.splice(index, 1);
   }
@@ -32,7 +28,6 @@ function alterarQtd(index, delta) {
   renderizar();
 }
 
-// Remove item
 function removerItem(index) {
   const carrinho = lerCarrinho();
   carrinho.splice(index, 1);
@@ -40,7 +35,6 @@ function removerItem(index) {
   renderizar();
 }
 
-// Limpa tudo (com confirmação)
 function limparCarrinho() {
   if (!confirm('Tem certeza que quer esvaziar o carrinho?')) return;
   localStorage.removeItem('carrinho');
@@ -48,13 +42,11 @@ function limparCarrinho() {
   renderizar();
 }
 
-// Renderiza carrinho
 function renderizar() {
   const carrinho = lerCarrinho();
   const itensEl = document.getElementById('itensCarrinho');
   const subtituloEl = document.getElementById('subtitulo');
 
-  // Estado vazio
   if (carrinho.length === 0) {
     subtituloEl.textContent = '0 itens';
     itensEl.innerHTML = `
@@ -67,7 +59,6 @@ function renderizar() {
     return;
   }
 
-  // Calcula totais
   const totalItens = carrinho.reduce((s, i) => s + i.qtd, 0);
   const subtotal = carrinho.reduce((s, i) => s + (i.preco * i.qtd), 0);
   const frete = subtotal >= FRETE_GRATIS ? 0 : 19.90;
@@ -75,7 +66,6 @@ function renderizar() {
 
   subtituloEl.textContent = `${totalItens} ${totalItens === 1 ? 'item' : 'itens'}`;
 
-  // Lista itens
   itensEl.innerHTML = carrinho.map((item, i) => `
     <div class="item-carrinho">
       <img src="${item.imagem}" alt="${item.nome}">
@@ -98,7 +88,6 @@ function renderizar() {
     </div>
   `).join('');
 
-  // Resumo + subtotal
   itensEl.innerHTML += `
     <div style="background:#fff;padding:32px;margin-top:16px;">
       <div style="display:flex;justify-content:space-between;padding:10px 0;font-family:'Helvetica',sans-serif;font-size:14px;">
@@ -138,10 +127,8 @@ function renderizar() {
   `;
 }
 
-// Placeholder do checkout (próxima fase)
 function finalizarCompra() {
   alert('🛒 Checkout será implementado na próxima fase!\n\nAqui você vai:\n\n• Preencher endereço de entrega\n• Calcular frete pelo CEP\n• Escolher forma de pagamento (Pix, cartão, boleto)\n• Finalizar o pedido');
 }
 
-// ============ INICIALIZAÇÃO ============
 renderizar();
